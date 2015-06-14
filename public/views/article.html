@@ -5,10 +5,9 @@
 </ul>
 
 
-<article>
+<article class="article">
     <h2>{{ article.title }}</h2>
     <h3>author: {{ article.author }}, published: {{  article.published }}</h3>
-    <section>
-        {{ article.text }}
+    <section ng-bind-html="article.text">
     </section>
 </article>
