@@ -1,0 +1,11 @@
+<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+
+    <div ng-repeat="harbour in harbours">
+        <ui-gmap-marker coords="harbour.coords" options="harbour.options"  idkey="harbour.id">
+            <ui-gmap-window options="windowOptions">
+                <div>{{ harbour.description }}</div>
+            </ui-gmap-window>
+        </ui-gmap-marker>
+    </div>
+
+</ui-gmap-google-map>

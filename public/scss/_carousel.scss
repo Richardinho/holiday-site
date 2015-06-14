@@ -1,0 +1,27 @@
+
+carousel {
+
+  $main-image-width : 500px;
+  $main-image-height : 300px;
+  $transition-time : 4s;
+
+  position : relative;
+  display : block;
+  min-height : $main-image-height;
+
+
+
+.carousel-image {
+    transition:all linear $transition-time;
+    position : absolute;
+    left : 0;
+    top : 0;
+    opacity : 0;
+    height : $main-image-height;
+    width : $main-image-width;
+
+  }
+  .carousel-image.active {
+    opacity : 1;
+  }
+}

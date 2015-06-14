@@ -1,0 +1,27 @@
+ul.tab-menu {
+
+  $half-tone : #9CB1C7;
+  $border-color : darken($half-tone, 10%);
+
+  display : table;
+  width : 100%;
+  padding : 0;
+  margin-bottom : 0;
+  border-bottom : solid 1px $border-color;
+  li {
+    float : left;
+    list-style : none;
+    border-right : solid 1px $border-color;
+    padding : $padding;
+    background: -webkit-linear-gradient(top, $half-tone 50%, $white 100%);
+    &:first-child {
+      border-left : solid 1px $border-color;
+      border-top-left-radius: 4px;
+    }
+    &:last-child {
+      border-top-right-radius: 4px;
+    }
+  }
+
+
+}

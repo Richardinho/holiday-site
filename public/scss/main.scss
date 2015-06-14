@@ -1,0 +1,45 @@
+// bower:scss
+// endbower
+@import "reset";
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@import "palette";
+@import "dimensions";
+@import "carousel";
+@import "tab-menu";
+@import "header";
+@import "main-navigation";
+@import "maps";
+
+body {
+  padding: 0;
+  background : $black;
+  color : $main-text-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    //max-width: 730px;
+  }
+}
+
+.container {
+  background : $white;
+  margin : auto;
+  padding : $padding;
+  line-height : 1.5;
+  width : $container-width_desktop;
+
+}
+
+
+
+
+
