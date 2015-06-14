@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var UserSchema = new Schema({
     author: String,
     published: String,
+    img : String,
     title : String,
     text: String
 });

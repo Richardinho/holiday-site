@@ -7,4 +7,13 @@
 
 </ui-gmap-google-map>
 
-<article ng-bind-html="currentArticle"></article>
+<article class="article" >
+    <h2>{{ currentArticle.title }}</h2>
+    <div class="meta-info">
+        <span ng-if="currentArticle.author">written by : {{  currentArticle.author }}</span><!--
+        --><span ng-if="currentArticle.author && currentArticle.published">,&nbsp;</span><!--
+        --><span ng-if="currentArticle.published"> published : {{ currentArticle.published }}</span>
+    </div>
+    <img ng-if="currentArticle.img" ng-src="/images/{{ currentArticle.img }}">
+    <section ng-bind-html="currentArticle.text"></section>
+</article>

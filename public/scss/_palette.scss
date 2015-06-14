@@ -5,3 +5,6 @@ $white : #def;
 $main-text-color : #343;
 
 $header-color : $white;
+$header-color-bg : lighten($black, 50%);
+
+$nav-bar-color : lighten($black, 70%);

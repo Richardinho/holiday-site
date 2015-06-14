@@ -3,11 +3,30 @@
   width : $container-width_desktop;
   margin : auto;
   li {
-    color : white;
     padding : 6px 12px;
+    a {
+      &:link {
+        color : lighten($black, 40%);
+        text-decoration: none;
+      }
+      &:visited {
+        color : lighten($black, 40%);
+        text-decoration: none;
+      }
+      &:hover {
+        color : $black;
+        text-decoration: underline;
+      }
+      &:active {
+        color : $black;
+        text-decoration: underline;
+      }
+
+
+    }
 
   }
 
 
-  background : green;
+  background : $nav-bar-color;
 }

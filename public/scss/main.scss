@@ -40,12 +40,31 @@ body {
 }
 
 .article {
-  padding : 12px;
+
+  padding : 12px 0;
+  text-align : justify;
+  overflow : hidden;
+
+  h2 {
+    font-size : 32px;
+  }
+
+  .meta-info {
+    font-style : italic;
+    font-size : 12px;
+  }
 
   p {
-    font-family : "Bookman", Georgia, "Times New Roman", serif;
+    font-family : "Times New Roman", serif;
     margin : 6px 0;
     line-height : 1.5;
+  }
+
+  img {
+    float : right;
+    width : 50%;
+    border : solid 1px $black;
+    margin-left : 12px;
   }
 }
 

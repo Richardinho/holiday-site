@@ -2,17 +2,15 @@
 
 [web-site-header] {
   display : block;
-  font-family: 'Rubik Mono One', sans-serif;
   font-size : 50px;
   color : $header-color;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: $black;
+
 
   .inner-container {
 
     margin : auto;
     padding : 24px 24px 16px;
-    background : red;
+    background : $header-color-bg;
     width : $container-width_desktop;
   }
 
