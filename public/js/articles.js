@@ -5,6 +5,11 @@ angular.module('articles', [])
 
             listArticles : function() {
                 return $http.get('/articles');
+            },
+
+            getArticleByKeyword : function(keyword) {
+
+                return $http.get('/articlesbykeyword/' + keyword);
             }
         };
     }])
@@ -26,9 +31,6 @@ angular.module('articles', [])
                 //  we click on the first tab we will get the same article with the id in the url. Inconsistent.
                 $scope.article = articles[0];
             }
-
         });
-
-
     }]);
 

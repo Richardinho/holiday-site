@@ -23,6 +23,22 @@ exports.list = function(req, res, next) {
     });
 };
 
+exports.articleByKeyword = function(req, res, next, keyword) {
+    Article.findOne({
+            title : keyword
+        },
+        function(err, article) {
+            if (err) {
+                return next(err);
+            }
+            else {
+                req.article= article;
+                next();
+            }
+        }
+    );
+}
+
 exports.read = function(req, res) {
     res.json(req.article);
 };
