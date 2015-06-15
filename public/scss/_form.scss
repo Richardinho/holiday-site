@@ -1,57 +1,90 @@
+.contact-form {
 
-form {
-  display : table;
-  width : 100%;
-  margin-bottom : $padding;
-  .ng-touched.ng-invalid {
-    border: solid 1px $error-message-color;
+  @mixin switchBlock() {
+    position: absolute;
+    width : 100%;
+    top: 0;
+    left: 0;
   }
 
-  label {
+  position : relative;
+  height : 500px;
 
-    display : block;
-  }
+  form {
 
-  input[type=text], input[type=email] {
-    width : 40%;
-    padding : 10px;
-    border : solid 1px $black;
-    margin : 10px $padding;
-    outline : none;
+    @include switchBlock();
 
+    margin-bottom: $padding;
 
-  }
-  [ng-messages] {
-    display : inline-block;
-    color : $error-message-color;
-  }
-
-  button {
-    float : right;
-    position  :relative;
-    display : inline-block;
-    font-size : 15px;
-    border : none;
-    padding : $padding $padding * 2;
-    text-transform : uppercase;
-    color : $white;
-    background : $button-color;
-    opacity : 1;
-    transition : opacity linear 1s;
-
-    &:hover {
-      background : $button-color-hover;
+    &.ng-leave {
+      transition: linear all 0.5s;
     }
-    &:active {
-      top : 2px;
+    &.ng-leave {
+      opacity: 1;
     }
-    &[disabled] {
-      opacity : 0;
+    &.ng-leave.ng-leave-active {
+      opacity: 0;
+    }
+
+    .ng-touched.ng-invalid {
+      border: solid 1px $error-message-color;
+    }
+
+    label {
+
+      display: block;
+    }
+
+    input[type=text], input[type=email] {
+      width: 40%;
+      padding: 10px;
+      border: solid 1px $border-color;
+      margin: 10px $padding;
+      outline: none;
+
+    }
+    [ng-messages] {
+      display: inline-block;
+      color: $error-message-color;
+    }
+
+    button {
+      float: right;
+      position: relative;
+      display: inline-block;
+      font-size: 15px;
+      border: none;
+      padding: $padding $padding * 2;
+      text-transform: uppercase;
+      color: $white;
+      background: $button-color;
+      opacity: 1;
+      transition: opacity linear 1s;
+
+      &:hover {
+        background: $button-color-hover;
+      }
+      &:active { // animation effect when button is pressed
+        top: 2px;
+      }
+      &[disabled] {
+        opacity: 0;
+      }
     }
   }
-}
 
-.results {
+  .results {
 
+    @include switchBlock();
 
+    &.ng-enter {
+      transition: linear all 1s;
+    }
+    &.ng-enter {
+      opacity: 0;
+    }
+    &.ng-enter.ng-enter-active {
+      opacity: 1;
+    }
+  }
 }

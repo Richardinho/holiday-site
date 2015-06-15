@@ -5,13 +5,13 @@
   font-size : 50px;
   color : $header-color;
 
-
   .inner-container {
 
     margin : auto;
     padding : 24px 24px 16px;
     background : $header-color-bg;
     width : $container-width_desktop;
+    border-bottom : solid 1px darken($header-color-bg, 50%);
   }
 
 }

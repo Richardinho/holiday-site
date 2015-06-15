@@ -9,18 +9,18 @@ carousel {
   display : block;
   min-height : $main-image-height;
 
+  .carousel-image {
+    transition: all linear $transition-time;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    border : solid 1px $border-color;
+    height: $main-image-height;
+    width: $main-image-width;
 
-    .carousel-image {
-      transition: all linear $transition-time;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-      height: $main-image-height;
-      width: $main-image-width;
-
-    }
-    .carousel-image.active {
-      opacity: 1;
-    }
+  }
+  .carousel-image.active {
+    opacity: 1;
+  }
 }

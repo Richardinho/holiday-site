@@ -1,0 +1,29 @@
+
+.article {
+
+  padding : 12px 0;
+  text-align : justify;
+  overflow : hidden;
+
+  h2 {
+    font-size : 32px;
+  }
+
+  p {
+    font-family : "Times New Roman", serif;
+    margin : 6px 0;
+    line-height : 1.5;
+  }
+
+  img {
+    float : right;
+    width : 50%;
+    border : solid 1px $border-color;
+    margin-left : $unit;
+  }
+
+  .meta-info {
+    font-style : italic;
+    font-size : $small-text-size;
+  }
+}

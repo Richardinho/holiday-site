@@ -1,9 +1,7 @@
 <h2>Contact Us: </h2>
-
-<div ng-switch on="formMode">
-
-     <p>Fill in your details here. Nothing is saved to the server. This is purely a dummy form for
-     example purposes</p>
+<p>Fill in your details here. Nothing is saved to the server. This is purely a dummy form for
+    example purposes</p>
+<div class="contact-form" ng-switch on="formMode">
 
     <form ng-switch-when="form" name="myForm" ng-submit="submit()" novalidate>
         <label>first name: <input name="firstName" type="text" ng-model="user.firstName" required minlength="2" />

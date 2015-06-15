@@ -9,7 +9,9 @@ $header-color-bg : lighten($black, 50%);
 
 $nav-bar-color : lighten($black, 70%);
 
-$error-message-color : orange;
+$error-message-color : #ffa876;
 
 $button-color : lighten($black, 30%);
 $button-color-hover : lighten($black, 10%);
+
+$border-color : $black;

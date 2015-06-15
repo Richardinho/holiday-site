@@ -24,7 +24,13 @@ angular.module('harbours', []).
         }
         $scope.map = { center: { latitude: 55.9416301, longitude: -4.7799435 }, zoom: 10 };
 
-        $scope.currentArticle = { text : '<p>click on a marker to see an article on that place</p>' };
+        $scope.currentArticle = { text : '<p>click on a marker to see an article on that place lorem ipsum  djkjd jdkj djjd '
+            + 'lkjd ;j;lorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd'
+            + 'lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd '
+            + 'lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem '
+            + 'ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjd djkjf '
+            + 'jkdjkjkjkl jkljkj jkljjl jklj ljkjkj</p>'
+        };
 
 
     }]);
