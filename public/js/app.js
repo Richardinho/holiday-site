@@ -33,24 +33,7 @@ angular
 
     }])
 
-
-
-    .factory('UsersService', ['$http', function ($http) {
-
-        var url = '/users';
-
-        return {
-            getUsers : function($scope) {
-                $http.get(url).success(function (users) {
-
-                    $scope.users = users;
-
-                });
-            }
-        };
-    }])
-
-    .controller('ContactCtrl', ['$scope', 'UsersService', function($scope, userService) {
+    .controller('ContactCtrl', ['$scope', function($scope) {
 
         $scope.user = {};
 
@@ -70,14 +53,6 @@ angular
         .when('/places', {
             templateUrl: 'views/places.html',
             controller: 'MapCtrl'
-        })
-        .when('/articles/:foo', {
-            templateUrl: 'views/article.html',
-            controller: 'ArticleCtrl'
-        })
-        .when('/articles', {
-            templateUrl: 'views/article.html',
-            controller: 'ArticleCtrl'
         })
         .when('/contact', {
             templateUrl: 'views/contact.html',
