@@ -52,9 +52,14 @@ angular
 
     .controller('ContactCtrl', ['$scope', 'UsersService', function($scope, userService) {
 
-        userService.getUsers($scope);
-    }])
+        $scope.user = {};
 
+        $scope.formMode = 'form';
+
+        $scope.submit = function () {
+            $scope.formMode = 'results';
+        }
+    }])
 
   .config(function ($routeProvider) {
     $routeProvider

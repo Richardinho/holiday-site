@@ -1,0 +1,57 @@
+
+form {
+  display : table;
+  width : 100%;
+  margin-bottom : $padding;
+  .ng-touched.ng-invalid {
+    border: solid 1px $error-message-color;
+  }
+
+  label {
+
+    display : block;
+  }
+
+  input[type=text], input[type=email] {
+    width : 40%;
+    padding : 10px;
+    border : solid 1px $black;
+    margin : 10px $padding;
+    outline : none;
+
+
+  }
+  [ng-messages] {
+    display : inline-block;
+    color : $error-message-color;
+  }
+
+  button {
+    float : right;
+    position  :relative;
+    display : inline-block;
+    font-size : 15px;
+    border : none;
+    padding : $padding $padding * 2;
+    text-transform : uppercase;
+    color : $white;
+    background : $button-color;
+    opacity : 1;
+    transition : opacity linear 1s;
+
+    &:hover {
+      background : $button-color-hover;
+    }
+    &:active {
+      top : 2px;
+    }
+    &[disabled] {
+      opacity : 0;
+    }
+  }
+}
+
+.results {
+
+
+}

@@ -1,7 +1,47 @@
-Contact us page
+<h2>Contact Us: </h2>
 
- <h2>Input your details here and we will get back to you maybe</h2>
+<div ng-switch on="formMode">
 
-<ul ng-repeat="user in users">
-    {{ user.name }} {{  user.username }}  {{  user.email }}
-</ul>
+     <p>Fill in your details here. Nothing is saved to the server. This is purely a dummy form for
+     example purposes</p>
+
+    <form ng-switch-when="form" name="myForm" ng-submit="submit()" novalidate>
+        <label>first name: <input name="firstName" type="text" ng-model="user.firstName" required minlength="2" />
+            <div ng-messages="myForm.firstName.$touched && myForm.firstName.$error">
+                <div ng-message="required">
+                    You have not input your first name.
+                </div>
+                <div ng-message="minlength">Your field is too short</div>
+            </div>
+        </label>
+        <label>last name: <input name="lastName" type="text" ng-model="user.lastName" minlength="3" required/>
+            <div ng-messages="myForm.lastName.$touched && myForm.lastName.$error">
+                <div ng-message="required">
+                    You have not input your last name.
+                </div>
+                <div ng-message="minlength">Your field is too short</div>
+            </div>
+        </label>
+        <label>email : <input name="email" type="email" ng-model="user.email" required/>
+            <div ng-messages="myForm.email.$touched && myForm.email.$error">
+                <div ng-message="required">
+                    You have not input your email
+                </div>
+                <div ng-message="email">
+                    You have not formatted your email correctly
+                </div>
+            </div>
+        </label>
+        <button ng-disabled="myForm.$invalid" type="submit">submit</button>
+
+    </form>
+
+    <div ng-switch-when="results" class="results">
+        first name : {{ user.firstName }}<br/>
+
+        last name : {{ user.lastName }}<br/>
+
+        email : {{ user.email }}
+    </div>
+</div>
+
