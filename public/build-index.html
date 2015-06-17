@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Holiday Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body ng-app="holidaySiteApp">
+
+<header web-site-header>Holiday Website</header>
+
+
+<ul menu-bar>
+    <li><a href="#/">home</a></li>
+    <li><a href="#/places">places to go</a></li>
+    <li><a href="#/contact">Contact us</a></li>
+</ul>
+
+<div class="container">
+    <div ng-view=""></div>
+</div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+<script src="/lib/lodash/lodash.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<script src="/lib/angular-animate/angular-animate.js"></script>
+<script src="/lib/angular-aria/angular-aria.js"></script>
+<script src="/lib/angular-cookies/angular-cookies.js"></script>
+<script src="/lib/angular-messages/angular-messages.js"></script>
+<script src="/lib/angular-resource/angular-resource.js"></script>
+<script src="/lib/angular-route/angular-route.js"></script>
+<script src="/lib/angular-sanitize/angular-sanitize.js"></script>
+<script src="/lib/angular-touch/angular-touch.js"></script>
+<script src="/lib/lodash/lodash.js"></script>
+<script src="/lib/angular-google-maps/dist/angular-google-maps.js"></script>
+
+<script src="/js/header/header.js"></script>
+<script src="/js/articles-stub.js"></script>
+<script src="/js/carousel.js"></script>
+<script src="/js/harbours.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>

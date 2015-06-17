@@ -12,13 +12,13 @@ angular.module('harbours', []).
         var defaultArticle = { text : '<p>Sorry, there is no article for that place</p>' };
 
         $scope.setArticle = function(keyword) {
-            articlesService.getArticleByKeyword(keyword).success(function(article) {
-                if(!article || !article.text) {
+            articlesService.getArticleByKeyword(keyword).then(function(article) {
+                if(!article.data || !article.data.text) {
                     $scope.currentArticle = defaultArticle;
                 } else {
-                    $scope.currentArticle = article;
+                    $scope.currentArticle = article.data;
                 }
-            }).error(function() {
+            },function() {
                 $scope.currentArticle = defaultArticle;
             });
         }
