@@ -8,6 +8,7 @@ body {
   margin : auto;
   line-height : 1.5;
   width : $container-width_mobile;
+  border : none;  //  remove border
 
 }
 
@@ -15,6 +16,7 @@ body {
   font-size : 30px;
   .inner-container {
     width : 100%;
+    border : none;  //  remove border
   }
 }
 
@@ -25,6 +27,7 @@ carousel {
 
 [menu-bar] {
   width : 100%;
+  border : none; //  remove border
 
 }
 
@@ -55,7 +58,6 @@ carousel {
       width: 100%;
       padding: 10px;
       margin : 0;
-      outline: none;
     }
 
     [ng-messages] {
