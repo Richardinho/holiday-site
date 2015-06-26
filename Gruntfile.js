@@ -12,6 +12,11 @@ module.exports = function(grunt) {
         clean: {
             build: ["holidaywebsite"]
         },
+        karma: {
+            unit: {
+                configFile: './karma.conf.js'
+            }
+        },
         copy: {
             main : {
                 cwd: 'public',  // set working folder / root to copy
@@ -54,6 +59,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['compass']);
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('build', ['clean:build','compass', 'copy']);
 

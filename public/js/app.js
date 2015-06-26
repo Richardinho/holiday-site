@@ -27,10 +27,7 @@ angular
   ])
     .controller('MainCtrl', ['$scope', function ($scope) {
         $scope.carouselImages = ['dunoon1.jpeg', 'dunoonpier.jpg', 'oldDunoon.jpg', 'westbay.jpg'];
-
         $scope.mainImage = $scope.carouselImages[1];
-
-
     }])
 
     .controller('ContactCtrl', ['$scope', function($scope) {

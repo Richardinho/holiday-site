@@ -1,0 +1,72 @@
+@import "mobile-dimensions";
+
+body {
+  background : green;
+}
+
+.container {
+  margin : auto;
+  line-height : 1.5;
+  width : $container-width_mobile;
+
+}
+
+[web-site-header] {
+  font-size : 30px;
+  .inner-container {
+    width : 100%;
+  }
+}
+
+/*  need to also turn this off on mobile */
+carousel {
+  display : none;
+}
+
+[menu-bar] {
+  width : 100%;
+
+}
+
+
+.article {
+
+  img {
+    float : none;
+    width : 100%;
+    margin : 0;
+  }
+
+}
+
+.contact-form {
+
+  @mixin switchBlock() {
+    position: absolute;
+    width : 100%;
+    top: 0;
+    left: 0;
+  }
+  height : 600px;
+
+  form {
+
+    input[type=text], input[type=email] {
+      width: 100%;
+      padding: 10px;
+      margin : 0;
+      outline: none;
+    }
+
+    [ng-messages] {
+      display: block;
+    }
+
+    button {
+      margin-top : 12px;
+      float: none;
+      width : 100%;
+    }
+  }
+
+}
