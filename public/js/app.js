@@ -15,7 +15,7 @@ angular
     'ngCookies',
     'ngMessages',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch',
     'uiGmapgoogle-maps',
@@ -41,21 +41,47 @@ angular
         }
     }])
 
-  .config(function ($routeProvider) {
-    $routeProvider
-        .when('/', {
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
-        })
-        .when('/places', {
-            templateUrl: 'views/places.html',
-            controller: 'MapCtrl'
-        })
-        .when('/contact', {
-            templateUrl: 'views/contact.html',
-            controller: 'ContactCtrl'
-        })
-        .otherwise({
-            redirectTo: '/'
+    .controller('PlacesCtrl', ['$scope', '$stateParams','ArticleService', function ($scope, $stateParams, articlesService) {
+
+        var defaultArticle = { text : '<p>Sorry, there is no article for that place</p>' };
+
+        articlesService.getArticleByKeyword($stateParams.place).then(function(article) {
+            if(!article.data || !article.data.text) {
+                $scope.currentArticle = defaultArticle;
+            } else {
+                $scope.currentArticle = article.data;
+            }
+        },function() {
+            $scope.currentArticle = defaultArticle;
         });
-  });
+
+    }])
+
+    .config(
+    ['$stateProvider',
+        function ($stateProvider) {
+
+            $stateProvider
+
+                .state("home", {
+                    url: "/",
+                    templateUrl: 'views/main.html',
+                    controller : 'MainCtrl'
+                })
+                .state('places', {
+                    url : '/places',
+                    templateUrl: 'views/places.html',
+                    controller: 'MapCtrl'
+                })
+                .state('places.place', {
+                    url : '/:place',
+                    templateUrl : 'views/place.html',
+                    controller : 'PlacesCtrl'
+                })
+                .state('contact', {
+                    url : '/contact',
+                    templateUrl: 'views/contact.html',
+                    controller: 'ContactCtrl'
+                });
+
+  }]);

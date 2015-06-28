@@ -1,5 +1,5 @@
 angular.module('harbours', []).
-    controller('MapCtrl', ['$scope','ArticleService', function($scope, articlesService) {
+    controller('MapCtrl', ['$scope', '$state', function($scope, $state) {
 
         $scope.harbours = [
             { id : 1, coords : { latitude : 55.9622222, longitude : -4.8165138 }, description : "You can see the sea from anywhere in Gourock", options : { draggable : false, 'title' : 'Gourock' } },
@@ -9,28 +9,11 @@ angular.module('harbours', []).
             { id : 5, coords : {latitude : 55.9388853, longitude : -4.5610189 }, description : "Dumbartonccvcvc",  options : { draggable : false, 'title' : 'Dumbarton' } }
         ];
 
-        var defaultArticle = { text : '<p>Sorry, there is no article for that place</p>' };
-
         $scope.setArticle = function(keyword) {
-            articlesService.getArticleByKeyword(keyword).then(function(article) {
-                if(!article.data || !article.data.text) {
-                    $scope.currentArticle = defaultArticle;
-                } else {
-                    $scope.currentArticle = article.data;
-                }
-            },function() {
-                $scope.currentArticle = defaultArticle;
-            });
+
+            $state.go('places.place', { place: keyword });
+
         }
         $scope.map = { center: { latitude: 55.9416301, longitude: -4.7799435 }, zoom: 10 };
-
-        $scope.currentArticle = { text : '<p>click on a marker to see an article on that place lorem ipsum  djkjd jdkj djjd '
-            + 'lkjd ;j;lorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd'
-            + 'lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd '
-            + 'lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem '
-            + 'ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjdlorem ipsum  djkjd jdkj djjd lkjd djkjf '
-            + 'jkdjkjkjkl jkljkj jkljjl jklj ljkjkj</p>'
-        };
-
 
     }]);
